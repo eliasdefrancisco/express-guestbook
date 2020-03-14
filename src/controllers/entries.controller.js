@@ -1,5 +1,7 @@
+const entries = []
+
 const renderIndex = (req, res) => {
-    res.render('index')
+    res.render('index', { entries })
 }
 
 const renderNewEntry = (req, res) => {
@@ -7,8 +9,13 @@ const renderNewEntry = (req, res) => {
 }
 
 const createNewEntry = (req, res) => {
-    console.log(req.body)
-    res.send('received')
+    const newEntry = {
+        title: req.body.title,
+        body: req.body.body,
+        published: new Date()
+    }
+    entries.push(newEntry)
+    res.redirect('/')
 }
 
 module.exports = {
