@@ -19,10 +19,10 @@ app.use(require('./routes/entries.routes'))
 
 // 404 handler
 app.use((req, res) => {
-    res.status(404).send('404 not found')
+    res.status(404).render('404')
 })
 
 // Starting the app
 app.listen(app.get('port'), () => {
-    console.log('Server on port ', app.get('port'))
+    console.log('Server on port:', app.get('port'))
 })
