@@ -7,7 +7,8 @@ const renderNewEntry = (req, res) => {
 }
 
 const createNewEntry = (req, res) => {
-    res.render('new-entry')
+    console.log(req.body)
+    res.send('received')
 }
 
 module.exports = {
